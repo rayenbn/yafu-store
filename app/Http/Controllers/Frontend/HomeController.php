@@ -88,7 +88,7 @@ class HomeController extends Controller
     {
 
         Newsletter::create(['email' => $request->newsletter_email]);
-        return back()->with('success', 'Thanks for subscribing to AFStore newsletter', 'succes');
+        return back()->with('success', 'Thanks for subscribing to Yafu Store newsletter', 'succes');
     }
 
      /**

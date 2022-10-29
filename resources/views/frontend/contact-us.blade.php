@@ -56,7 +56,7 @@
 
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
-                                                    <input type="text" name="product" class="form-control" placeholder="Product: (ex: AFStore LADIES SERIE 600-4000 PUFFS)">
+                                                    <input type="text" name="product" class="form-control" placeholder="Product: (ex: cat toys, dog toy, harness, pet bed etc...)">
                                                 </div>
                                             </div>
 

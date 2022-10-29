@@ -124,10 +124,21 @@
             <aside class="sidebar col-lg-3">
                 <div class="sidebar-widget">
                     <h4 class="widget-title">Newsletter</h4>
-                    <form>
+                    @if(count($errors) > 0)
+                    <ul>
+                        @foreach($errors->all() as $error)
+                        <li style="color: #ff4a56;">-> {{ $error }}</li>
+                        @endforeach
+                    </ul>
+                    @endif
+                    @if($message = Session::get('success'))
+                    <p style="font-size: 14px;color: #067720;">{{ $message }}</p>
+                    @endif
+                    <form action="{{ url('newsletter/subscribe') }}" method="post">
+                    {{ csrf_field() }}
                         <div class="form-group">
-                            <input type="text" placeholder="E-mail address">
-                            <input type="submit" class="btn btn-primary btn-sm" value="Subscribe">
+                            <input type="email" name="newsletter_email" placeholder="E-mail adress" required>
+                            <button type="submit" class="btn btn-primary btn-sm">subscribe</button>
                         </div>
                     </form>
 

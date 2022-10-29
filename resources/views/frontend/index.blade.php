@@ -293,6 +293,97 @@
             </div>
         </div> --}}
 
+
+        <section class="section-contact-form mtb-45" id="samples">
+        <div class="rwt-pricing-area rn-section-gap">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-8 text-center">
+                        <div class="section-title section-title-w-text text-center">
+                            <h2 class="h3 section-title__heading">Inquire a sample!</h2> 
+                            <div class="section-title__text">To further support customers who are sincere about running a production with us,
+                                we credit 50 USD towards your first purchase.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row--15">
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="rn-pricing style-5">
+                            <div class="pricing-table-inner">
+                                <div class="pricing-header">
+                                    <h4 class="title">Small Set</h4>
+                                    <div class="pricing">
+                                        <div class="price-wrapper"><span class="currency">$</span><span class="price">99</span></div><span class="subtitle">Including shipping fee</span>
+                                    </div>
+                                </div>
+                                <div class="pricing-body">
+                                    <ul class="list-style--1">
+                                        <li><i class="feather-check"></i> 2 Dog toy</li>
+                                        <li><i class="feather-check"></i> 2 Cat toy</li>
+                                        <li><i class="feather-check"></i> 1 Dog Harness (Size S)</li>
+                                        <li><i class="feather-check"></i> 1 Bed (Dog/cat)</li>
+                                        <br>
+                                        <br>
+                                    </ul>
+                                </div>
+                                <div class="pricing-footer"><a class="btn btn-outline-primary mr-1 mb-3" href="#">Purchase Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="rn-pricing style-5 active">
+                            <div class="pricing-table-inner">
+                                <div class="pricing-header">
+                                    <h4 class="title" style="font-weight: bold;">Starter Set</h4>
+                                    <div class="pricing">
+                                        <div class="price-wrapper"><span class="currency">$</span><span class="price">129</span></div><span class="subtitle">Including shipping fee</span>
+                                    </div>
+                                </div>
+                                <div class="pricing-body">
+                                    <ul class="list-style--1">
+                                        <li><i class="feather-check"></i> 6 Toys (For cat and dog)</li>
+                                        <li><i class="feather-check"></i> 1 Cat puzzle toy</li>
+                                        <li><i class="feather-check"></i> 1 Dog Bed</li>
+                                        <li><i class="feather-check"></i> 1 Cat Bed</li>
+                                        <li><i class="feather-check"></i> 1 Dog Harness Set(Size S)</li>
+                                        <li><i class="feather-check"></i> 1 Dog Collar & Leash</li>
+                                    </ul>
+                                </div>
+                                <div class="pricing-footer"><a class="btn btn-primary active mr-3 mb-3" href="#">Purchase Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="rn-pricing style-5">
+                            <div class="pricing-table-inner">
+                                <div class="pricing-header">
+                                    <h4 class="title">business Set</h4>
+                                    <div class="pricing">
+                                        <div class="price-wrapper"><span class="currency">$</span><span class="price">239</span></div><span class="subtitle">Including shipping fee</span>
+                                    </div>
+                                </div>
+                                <div class="pricing-body">
+                                    <ul class="list-style--1">
+                                        <li><i class="feather-check"></i> 6 Toys (For cat and dog)</li>
+                                        <li><i class="feather-check"></i> 2 Cat puzzle toy</li>
+                                        <li><i class="feather-check"></i> 2 Dog Bed</li>
+                                        <li><i class="feather-check"></i> 2 Cat Bed</li>
+                                        <li><i class="feather-check"></i> 2 Dog Harness Set (Size S)</li>
+                                        <li><i class="feather-check"></i> 2 Dog Collar & Leash</li>
+                                    </ul>
+                                </div>
+                                <div class="pricing-footer"><a class="btn btn-outline-primary mr-1 mb-3" href="#">Purchase Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+            {{--
         <section class="section-contact-form" id="samples">
             <div class="container">
                 <div class="row justify-content-center">
@@ -338,7 +429,7 @@
                 </div>
             </div>
         </section>
-
+                --}}
         <!-- Call Action -->
         @include('frontend.components.newsletter')
             <!-- End Section -->
