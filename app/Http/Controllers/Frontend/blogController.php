@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Image; //Intervention Image
 use Illuminate\Support\Facades\Storage; //Laravel Filesystem
+use Artesaos\SEOTools\Facades\SEOMeta;
 
 class blogController extends Controller
 {
@@ -34,6 +35,10 @@ class blogController extends Controller
      */
     public function show(Blog $blog)
     {
+        SEOMeta::setTitle($blog->title);
+        SEOMeta::setDescription($blog->meta_desc);
+        SEOMeta::addKeyword([$blog->keywords]);
+
         $blog->increment('views');
         $categories = Category::where('status', 1)->get();
         $popular_blogs = Blog::orderBy('views', 'DESC')->take(5)->get();

@@ -395,6 +395,11 @@ return [
             'updated_at_helper'  => '',
             'deleted_at'         => 'Deleted at',
             'deleted_at_helper'  => '',
+            'keywords'           => 'Keywords',
+            'keywords_helper'  => '',
+            'meta_desc'           => 'Meta Description',
+            'meta_desc_helper'  => '',
+            
         ],
     ],
     'contactus'                           => [
@@ -447,6 +452,10 @@ return [
             'updated_at_helper'  => '',
             'deleted_at'         => 'Deleted at',
             'deleted_at_helper'  => '',
+            'keywords'              => 'Keywords',
+            'keywords_helper'       => '',
+            'meta_desc'              => 'Meta Description',
+            'meta_desc_helper'       => '',
         ],
     ],
     'homepage'                  => [

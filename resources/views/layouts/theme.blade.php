@@ -14,8 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="{{ asset('/favicon.ico') }}" type="image/x-icon">
 	<meta name="author" content="digitafro.com">
-	<meta name="keywords" content="">
-	<meta name="description" content="">
+	{!! SEOMeta::generate() !!}
 	<meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="shortcut icon" type="image/png" href="{{ asset('img/favicon.png') }}">
 	<!-- Fonts -->

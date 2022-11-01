@@ -8,6 +8,7 @@ use App\Product;
 use App\Category;
 use App\ProductPage;
 use App\ProductsImage;
+use Artesaos\SEOTools\Facades\SEOMeta;
 
 class ProductsController extends Controller
 {
@@ -65,9 +66,13 @@ class ProductsController extends Controller
      */
     public function show(Product $our_product)
     {
-        $previous_record = Product::where([['id', '<', $our_product->id], ['status', 1]])->orderBy('id','desc')->get()->take(2);
-        $next_record = Product::where([['id', '>', $our_product->id],['status', 1]])->orderBy('id')->get()->take(3);
-        $on_sale = Product::inRandomOrder()->limit(5)->get();
+        SEOMeta::setTitle($our_product->name);
+        SEOMeta::setDescription($our_product->meta_desc);
+        SEOMeta::addKeyword([$our_product->keywords]);
+
+        // $previous_record = Product::where([['id', '<', $our_product->id], ['status', 1]])->orderBy('id','desc')->get()->take(2);
+        // $next_record = Product::where([['id', '>', $our_product->id],['status', 1]])->orderBy('id')->get()->take(3);
+        // $on_sale = Product::inRandomOrder()->limit(5)->get();
         // $images = ProductsImage::where('id', $our_product->id);
         $images = $our_product->images()->get();
         // dd($images);

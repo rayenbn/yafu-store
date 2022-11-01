@@ -89,7 +89,9 @@ class ProductsController extends Controller
             'video'         => $video_path,
             'name'       => $request->input('name'),
             'description'       => $request->input('description'),
-            'color_code' => $request->input('color_code')
+            'color_code' => $request->input('color_code'),
+            'keywords'       => $request->input('keywords'),
+            'meta_desc'       => $request->input('meta_desc')
          ];
 
          if ($request->has('status')){
@@ -202,7 +204,9 @@ class ProductsController extends Controller
             'video'         => $video_path,
             'name'       => $request->input('name'),
             'description'       => $request->input('description'),
-            'color_code' => $request->input('color_code')
+            'color_code' => $request->input('color_code'),
+            'keywords'       => $request->input('keywords'),
+            'meta_desc'       => $request->input('meta_desc')
          ];
         
          if ($request->has('status')){

@@ -57,6 +57,32 @@
                 </p>
             </div>
 
+            <div class="form-group {{ $errors->has('keywords') ? 'has-error' : '' }}">
+                <label for="keywords">{{ trans('global.blog.fields.keywords') }}*</label>
+                <input type="text" id="keywords" name="keywords" class="form-control" value="{{ old('keywords', isset($blog) ? $blog->keywords : '') }}">
+                @if($errors->has('keywords'))
+                    <p class="help-block">
+                        {{ $errors->first('keywords') }}
+                    </p>
+                @endif
+                <p class="helper-block">
+                    {{ trans('global.blog.fields.keywords_helper') }}
+                </p>
+            </div>
+
+            <div class="form-group {{ $errors->has('meta_desc') ? 'has-error' : '' }}">
+                <label for="meta_desc">{{ trans('global.blog.fields.meta_desc') }}*</label>
+                <input type="text" id="meta_desc" name="meta_desc" class="form-control" value="{{ old('meta_desc', isset($blog) ? $blog->meta_desc : '') }}">
+                @if($errors->has('meta_desc'))
+                    <p class="help-block">
+                        {{ $errors->first('meta_desc') }}
+                    </p>
+                @endif
+                <p class="helper-block">
+                    {{ trans('global.blog.fields.meta_desc_helper') }}
+                </p>
+            </div>
+            
             <div>
                 <input class="btn btn-success" type="submit" value="{{ trans('global.save') }}">
             </div>

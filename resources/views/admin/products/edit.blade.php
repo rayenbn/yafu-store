@@ -259,6 +259,36 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <div class="form-group col-sm-12 {{ $errors->has('keywords') ? 'has-error' : '' }}">
+                            <label for="keywords">{{ trans('global.product.fields.keywords') }}*</label>
+                            <input type="text" id="keywords" name="keywords" class="form-control" value="{{ old('keywords', isset($product) ? $product->keywords : '') }}">
+                            @if($errors->has('keywords'))
+                            <em class="invalid-feedback">
+                                {{ $errors->first('keywords') }}
+                            </em>
+                            @endif
+                            <p class="helper-block">
+                                {{ trans('global.product.fields.keywords_helper') }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group col-sm-12 {{ $errors->has('meta_desc') ? 'has-error' : '' }}">
+                            <label for="meta_desc">{{ trans('global.product.fields.meta_desc') }}*</label>
+                            <input type="text" id="meta_desc" name="meta_desc" class="form-control" value="{{ old('meta_desc', isset($product) ? $product->meta_desc : '') }}">
+                            @if($errors->has('meta_desc'))
+                            <em class="invalid-feedback">
+                                {{ $errors->first('meta_desc') }}
+                            </em>
+                            @endif
+                            <p class="helper-block">
+                                {{ trans('global.product.fields.meta_desc_helper') }}
+                            </p>
+                        </div>
+                    </div>
+
+
                     <div class="col-md-6 mb-8">
                         <label class="form-check-label" for="status">Status</label>
                         <input type="checkbox" name="status" id="status" value="1" @if(isset($product) && $product->status == '1') checked @endif>

@@ -326,7 +326,14 @@
                                         <br>
                                     </ul>
                                 </div>
-                                <div class="pricing-footer"><a class="btn btn-outline-primary mr-1 mb-3" href="#">Purchase Now</a>
+                                <div class="pricing-footer" style="padding: 20px;">
+                                    <!-- <a class="btn btn-outline-primary mr-1 mb-3" href="#">Purchase Now</a> -->
+                                    <div id="small-set-smart-button-container">
+                                        <div style="text-align: center;">
+                                            <div id="paypal-small-set-button-container"></div>
+                                        </div>
+                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -350,7 +357,13 @@
                                         <li><i class="feather-check"></i> 1 Dog Collar & Leash</li>
                                     </ul>
                                 </div>
-                                <div class="pricing-footer"><a class="btn btn-primary active mr-3 mb-3" href="#">Purchase Now</a>
+                                <div class="pricing-footer" style="padding: 20px;">
+                                    <!-- <a class="btn btn-primary active mr-3 mb-3" href="#">Purchase Now</a> -->
+                                    <div id="starter-set-smart-button-container">
+                                        <div style="text-align: center;">
+                                            <div id="paypal-starter-set-button-container"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -374,7 +387,13 @@
                                         <li><i class="feather-check"></i> 2 Dog Collar & Leash</li>
                                     </ul>
                                 </div>
-                                <div class="pricing-footer"><a class="btn btn-outline-primary mr-1 mb-3" href="#">Purchase Now</a>
+                                <div class="pricing-footer" style="padding: 20px;">
+                                    <!-- <a class="btn btn-outline-primary mr-1 mb-3" href="#">Purchase Now</a> -->
+                                    <div id="bussiness-set-smart-button-container">
+                                        <div style="text-align: center;">
+                                        <div id="paypal-bussiness-set-button-container"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -435,4 +454,132 @@
             <!-- End Section -->
     </main> <!-- end of main -->
 </div>
+@endsection
+@section('scripts')
+@parent
+
+<!-- <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script> -->
+<script src="https://www.paypal.com/sdk/js?client-id=Aeg5u_HEhuE21kXnLjvsOEcRqK2q0y-BuC-H_KAWwl8jXP0jaI3g2i5SdTnyH7BkYfOtT8nWQtdQl4Pe&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+<script>
+function initPayPalSmallSetButton() {
+    paypal.Buttons({
+    style: {
+        shape: 'rect',
+        color: 'silver',
+        layout: 'vertical',
+        label: 'checkout',
+        
+    },
+
+    createOrder: function(data, actions) {
+        return actions.order.create({
+        purchase_units: [{"description":"Yafu Pet Toys SMALL SET sample package","amount":{"currency_code":"USD","value":99}}]
+        });
+    },
+
+    onApprove: function(data, actions) {
+        return actions.order.capture().then(function(orderData) {
+        
+        // Full available details
+        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+        // Show a success message within this page, e.g.
+        const element = document.getElementById('paypal-small-set-button-container');
+        element.innerHTML = '';
+        element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+        // Or go to another URL:  actions.redirect('thank_you.html');
+        
+        });
+    },
+
+    onError: function(err) {
+        console.log(err);
+    }
+    }).render('#paypal-small-set-button-container');
+}
+initPayPalSmallSetButton();
+</script>
+
+  <script>
+    function initPayPalButton() {
+      paypal.Buttons({
+        style: {
+            shape: 'rect',
+            color: 'silver',
+            layout: 'vertical',
+            label: 'checkout',
+          
+        },
+
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{"description":"Yafu Pet Toys STARTER SET sample package","amount":{"currency_code":"USD","value":129}}]
+          });
+        },
+
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(orderData) {
+            
+            // Full available details
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+            // Show a success message within this page, e.g.
+            const element = document.getElementById('paypal-starter-set-button-container');
+            element.innerHTML = '';
+            element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+            // Or go to another URL:  actions.redirect('thank_you.html');
+            
+          });
+        },
+
+        onError: function(err) {
+          console.log(err);
+        }
+      }).render('#paypal-starter-set-button-container');
+    }
+    initPayPalButton();
+  </script>
+
+  <script>
+    function initPayPalBussinessSetButton() {
+      paypal.Buttons({
+        style: {
+          shape: 'rect',
+          color: 'silver',
+          layout: 'vertical',
+          label: 'checkout',
+          
+        },
+
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{"description":"239","amount":{"currency_code":"USD","value":239}}]
+          });
+        },
+
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(orderData) {
+            
+            // Full available details
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+            // Show a success message within this page, e.g.
+            const element = document.getElementById('paypal-bussiness-set-button-container');
+            element.innerHTML = '';
+            element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+            // Or go to another URL:  actions.redirect('thank_you.html');
+            
+          });
+        },
+
+        onError: function(err) {
+          console.log(err);
+        }
+      }).render('#paypal-bussiness-set-button-container');
+    }
+    initPayPalBussinessSetButton();
+  </script>
 @endsection

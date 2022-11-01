@@ -79,6 +79,8 @@ class blogController extends Controller
             'title' => $request->title,
             'text' => $request->text,
             'created_by' => Auth::check() ? Auth::user()->name : 'anonymouse',
+            'keywords'       => $request->input('keywords'),
+            'meta_desc'       => $request->input('meta_desc')
         ]);
         return redirect()->route('admin.blogs.index');
     }
@@ -148,6 +150,8 @@ class blogController extends Controller
             'title' => $request->title,
             'text' => $request->text,
             'created_by' => Auth::check() ? Auth::user()->name : 'anonymouse',
+            'keywords'       => $request->input('keywords'),
+            'meta_desc'       => $request->input('meta_desc')
         ]);
 
         return redirect()->route('admin.blogs.index');

@@ -178,7 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Intervention\Image\ImageServiceProvider::class,
-
+        Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
     ],
 
     /*

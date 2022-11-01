@@ -30,6 +30,8 @@ class Product extends Model
         'created_at',
         'updated_at',
         'deleted_at',
+        'keywords',
+        'meta_desc',
     ];
 
     public function getLogopriceAttribute($value)
