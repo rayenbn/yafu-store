@@ -13,7 +13,7 @@
         <td align="left" style="font-size: 16px; font-family: Avenir,sans-serif;">
             <p style="color: black;">Dear {{ ucfirst($clientName) }}</p>
 
-			<p style="color: black;">Congrats on your order at PUFFLEX. <br>
+			<p style="color: black;">Congrats on your order at Yafu pet toys manufacture. <br>
 			We have already received your product details.<p>
 
 			{{--  <p style="color: black;">Attached you can find your invoice.<br>
@@ -30,7 +30,7 @@
             @endforeach
             @endif --}}
 			Cheers <br>
-			Zara
+			Rayen Ben
         </td>
     </tr>
 </table>
@@ -41,8 +41,8 @@
           
             <b>Rayen Ben</b> <br>
             <br>
-            rayen@pufflex.com<br>
-			CN: +86 135 0152 1601
+            rayen@yafu-pey-toys.com<br>
+			CN: +86 13226604307
         </td>
     </tr>
 </table>

@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'mail.fashionavenu.com'),
+    'host' => env('MAIL_HOST', 'mail.yafu-pet-toys.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Getlf'),
+        'address' => env('MAIL_FROM_ADDRESS', 'noreply@yafu-pey-toys.com'),
+        'name' => env('MAIL_FROM_NAME', 'Yafu Pet Toys'),
     ],
 
     /*

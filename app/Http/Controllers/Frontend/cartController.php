@@ -106,7 +106,7 @@ class cartController extends Controller
             return $carry + $item->count();
         }, 0);
         
-        Mail::to('myrayenemail@fgufr.com')->send($mailer = new \App\Mail\OrderSubmit(auth()->user()));
+        Mail::to(auth()->user()->email)->send($mailer = new \App\Mail\OrderSubmit(auth()->user()));
 
         $invoiceNumber = $mailer->getInvoiceNumber();
         $now = now();

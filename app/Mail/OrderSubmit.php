@@ -44,9 +44,9 @@ class OrderSubmit extends Mailable
 
         return $this
             ->from(config('mail.from.address'), config('mail.from.name'))
-            ->bcc(['rayen@pufflex.com'], 'Disposable cigarette factory')
+            ->bcc(['rayen@yafu-pey-toys.com'], 'Wholesale pet toys manufacture order')
             ->replyTo($this->data->email, $this->data->name)
-            ->subject('AFStore Production Order Confirmation')
+            ->subject('YAFU Production Order Confirmation')
             ->with([
                 'invoiceName' => (isset($info) && $info->invoice_name) ? $info->invoice_name : 'Non stated',
                 // 'files'       => ($files->getRecentFiles() !== null) ? $files->getRecentFiles() : null,
