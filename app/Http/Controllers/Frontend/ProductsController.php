@@ -19,7 +19,8 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::where('status', 1)->paginate(12);
+        // $products = Product::where('status', 1)->paginate(12);
+        $products = Product::where('status', 1)->get();
         $productpage = ProductPage::first();
         $categories = Category::where([['has_parent', 0], ['status', 1]])->orderBy('order','asc')->get();
         // dd($categories);

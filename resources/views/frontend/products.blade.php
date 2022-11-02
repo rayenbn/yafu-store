@@ -50,9 +50,10 @@
                     @endforeach
                 </ul>
 
+                {{--
                 <nav class="shop-pagination text-center">
                 {{ $products->links('vendor.pagination.theme_paginator') }}
-                </nav>
+                </nav> --}}
             </div>
         </main>
     </div>
