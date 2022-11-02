@@ -5,7 +5,7 @@
     <main class="main-content">
         @include('partials.slider', $sliders)
         
-        <section class="section-featured-icons">
+        <section class="section-featured-icons d-none d-md-block">
             <div class="container">
                 <h2 class="screen-reader-text">Our features</h2>
                 <div class="row">

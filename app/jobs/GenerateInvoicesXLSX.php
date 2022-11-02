@@ -359,24 +359,24 @@ class GenerateInvoicesXLSX implements ShouldQueue
         }
 
       
-        // Bank info head styles
-        $this->getActiveSheet()
-            ->getStyle(sprintf('C%1$s:N%1$s', $startTotal + 10))
-            ->applyFromArray([
-                'font' => [
-                    'size' => 12,
-                    'bold' => true,
-                    'color' => [
-                        'argb' => Color::COLOR_BLACK,
-                    ]
-                ],
-                'fill' => [
-                    'fillType' => Fill::FILL_SOLID,
-                    'startColor' => [
-                        'rgb' => 'F2F2F2',
-                    ],
-                ],
-            ]);
+        // Bank info head styles // desactivate the bank info
+        // $this->getActiveSheet()
+        //     ->getStyle(sprintf('C%1$s:N%1$s', $startTotal + 10))
+        //     ->applyFromArray([
+        //         'font' => [
+        //             'size' => 12,
+        //             'bold' => true,
+        //             'color' => [
+        //                 'argb' => Color::COLOR_BLACK,
+        //             ]
+        //         ],
+        //         'fill' => [
+        //             'fillType' => Fill::FILL_SOLID,
+        //             'startColor' => [
+        //                 'rgb' => 'F2F2F2',
+        //             ],
+        //         ],
+        //     ]);
 
         // recieent red color
         $this->getActiveSheet()
@@ -392,68 +392,68 @@ class GenerateInvoicesXLSX implements ShouldQueue
             ]);
         
 
-            // footer info styles
-        $this->getActiveSheet()->getStyle(sprintf('B%s:O%s', $startTotal + 18 , $startTotal + 20))
-        ->applyFromArray([
-            'font' => [
-                'size' => 11,
-                'bold' => false,
-                'color' => [
-                    'rgb' => '808080',
-                ]
-            ],
-            'fill' => [
-                'fillType' => Fill::FILL_SOLID,
-                'startColor' => [
-                    'rgb' => 'ffffff',
-                ],
-            ],
-            // 'borders' => [
-            //     'bottom' => [
-            //         'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_DOUBLE,
-            //         'color' => ['rgb' => '000000'],
-            //     ],
-            // ],
-        ]);
+            // footer info styles // desactivate the bank info
+        // $this->getActiveSheet()->getStyle(sprintf('B%s:O%s', $startTotal + 18 , $startTotal + 20))
+        // ->applyFromArray([
+        //     'font' => [
+        //         'size' => 11,
+        //         'bold' => false,
+        //         'color' => [
+        //             'rgb' => '808080',
+        //         ]
+        //     ],
+        //     'fill' => [
+        //         'fillType' => Fill::FILL_SOLID,
+        //         'startColor' => [
+        //             'rgb' => 'ffffff',
+        //         ],
+        //     ],
+        //     // 'borders' => [
+        //     //     'bottom' => [
+        //     //         'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_DOUBLE,
+        //     //         'color' => ['rgb' => '000000'],
+        //     //     ],
+        //     // ],
+        // ]);
         
-
-        $this
-            ->getActiveSheet()
-            ->setCellValue('C' . $shipsStart = $startTotal + 10, 'BANK INFORMATION: USD ACCOUNT ')
-            ->setCellValue('C' . ($shipsStart + 2), 'NAME OF THE BANK: ')
-            ->setCellValue('F' . ($shipsStart + 2),  'BANK OF JINHUA')
+        
+        // $this
+        //     ->getActiveSheet()
+        //     ->setCellValue('C' . $shipsStart = $startTotal + 10, 'BANK INFORMATION: USD ACCOUNT ')
+        //     ->setCellValue('C' . ($shipsStart + 2), 'NAME OF THE BANK: ')
+        //     ->setCellValue('F' . ($shipsStart + 2),  'BANK OF JINHUA')
             
-            ->setCellValue('C' . ($shipsStart + 3), 'RECIPIENT: ')
-            ->setCellValue('F' . ($shipsStart + 3), 'MEILA TRADING COMPANY LIMITED')
+        //     ->setCellValue('C' . ($shipsStart + 3), 'RECIPIENT: ')
+        //     ->setCellValue('F' . ($shipsStart + 3), 'MEILA TRADING COMPANY LIMITED')
 
-            ->setCellValue('C' . ($shipsStart + 4), 'USD ACCOUNT IBAN: ')
-            ->setCellValue('F' . ($shipsStart + 4), 'NRA1456993009000304')
+        //     ->setCellValue('C' . ($shipsStart + 4), 'USD ACCOUNT IBAN: ')
+        //     ->setCellValue('F' . ($shipsStart + 4), 'NRA1456993009000304')
 
-            ->setCellValue('C' . ($shipsStart + 5), 'BIC / SWIFT: ')
-            ->setCellValue('F' . ($shipsStart + 5), 'JHCBCNBJ')
+        //     ->setCellValue('C' . ($shipsStart + 5), 'BIC / SWIFT: ')
+        //     ->setCellValue('F' . ($shipsStart + 5), 'JHCBCNBJ')
 
-            // ->setCellValue('C' . ($shipsStart + 6), 'BIC / SWIFT: ')
-            // ->setCellValue('F' . ($shipsStart + 6), '   ')
+        //     // ->setCellValue('C' . ($shipsStart + 6), 'BIC / SWIFT: ')
+        //     // ->setCellValue('F' . ($shipsStart + 6), '   ')
 
 
-            ->setCellValue('J' . $shipsStart = $startTotal + 10, 'BANK INFORMATION: EURO ACCOUNT ')
-            ->setCellValue('J' . ($shipsStart + 2), 'BENEFICIARY NAME :')
-            ->setCellValue('k' . ($shipsStart + 2), 'MEILA TRADING COMPANY LIMITED. ')
+        //     ->setCellValue('J' . $shipsStart = $startTotal + 10, 'BANK INFORMATION: EURO ACCOUNT ')
+        //     ->setCellValue('J' . ($shipsStart + 2), 'BENEFICIARY NAME :')
+        //     ->setCellValue('k' . ($shipsStart + 2), 'MEILA TRADING COMPANY LIMITED. ')
 
-            ->setCellValue('J' . ($shipsStart + 3), 'A/C NO: ')
-            ->setCellValue('k' . ($shipsStart + 3), 'NRA3856993009000132')
+        //     ->setCellValue('J' . ($shipsStart + 3), 'A/C NO: ')
+        //     ->setCellValue('k' . ($shipsStart + 3), 'NRA3856993009000132')
 
-            ->setCellValue('J' . ($shipsStart + 4), 'Bank Add: ')
-            ->setCellValue('k' . ($shipsStart + 4), 'No258-28 CHENGBEI ROAD YIWU CHINA.')
+        //     ->setCellValue('J' . ($shipsStart + 4), 'Bank Add: ')
+        //     ->setCellValue('k' . ($shipsStart + 4), 'No258-28 CHENGBEI ROAD YIWU CHINA.')
 
-            ->setCellValue('J' . ($shipsStart + 5), ' SWIFT CODE:')
-            ->setCellValue('k' . ($shipsStart + 5), 'YZBKCN2N')
+        //     ->setCellValue('J' . ($shipsStart + 5), ' SWIFT CODE:')
+        //     ->setCellValue('k' . ($shipsStart + 5), 'YZBKCN2N')
 
-            ->setCellValue('J' . ($shipsStart + 5), 'BENEFICIARY BANK: ')
-            ->setCellValue('k' . ($shipsStart + 5), 'YINZHOU BANK.')
+        //     ->setCellValue('J' . ($shipsStart + 5), 'BENEFICIARY BANK: ')
+        //     ->setCellValue('k' . ($shipsStart + 5), 'YINZHOU BANK.')
 
-            // ->setCellValue('C' . ($shipsStart + 8), 'The terms and conditions stated on yafu-pet-toys.com apply to this invoice ')
-            ;
+        //     // ->setCellValue('C' . ($shipsStart + 8), 'The terms and conditions stated on yafu-pet-toys.com apply to this invoice ')
+        //     ;
 
         return $this;
     }

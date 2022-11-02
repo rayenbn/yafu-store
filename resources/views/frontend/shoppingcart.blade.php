@@ -114,7 +114,7 @@
 
                     <div class="cart-total__btns text-lg-right">
                         <a href="{{ route('shop') }}" class="btn btn-outline-primary btn-lg cart-update-btn">Back to shop</a>
-                        <a href="{{ route('orders.submit') }}" class="btn btn-primary btn-lg cart-checkout-btn">Get a quote</a>
+                        <a href="{{ route('orders.submit') }}" class="btn btn-primary btn-lg cart-checkout-btn">Checkout</a>
                     </div>
                 </div>
             </div>
