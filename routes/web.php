@@ -65,7 +65,7 @@ Route::redirect('/home', '/admin');
 // Auth::routes(['register' => false]);
 Auth::routes();
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', 'isAdmin']], function () {
     Route::get('/', 'HomeController@index')->name('home');
 
     Route::delete('permissions/destroy', 'PermissionsController@massDestroy')->name('permissions.massDestroy');

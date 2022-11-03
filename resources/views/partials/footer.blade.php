@@ -68,7 +68,7 @@ $global_settings =Controller::global_settings();
 			<ul class="footer-bottom__menu">
 				<li><a href="/privacy-policy">Privacy Policy</a></li>
 				<li><a href="/terms-and-condition">Terms of use</a></li>
-				<li><a href="/sitemap">Sitemap</a></li>
+				<li><a href="/sitemap.xml">Sitemap</a></li>
 			</ul>
 		</div>
 	</div>
