@@ -37,25 +37,26 @@ Route::group(['namespace' => 'Frontend'], function () {
 
     Route::post('/search', 'HomeController@search')->name('search');
 
-    Route::get('/cart', 'cartController@index')->name('shoppingcart');
-    Route::post('/add-to-cart', 'cartController@store');
-    Route::get('/submit_order','cartController@submitOrder')->name('orders.submit');
-    Route::post('/upload-logo', 'cartController@uploadlogo');
-    Route::delete('/delete-cart-item/{id}', 'cartController@destroy')->name('orders.delete-cart-item');
-
-    Route::get('brand-new', function () {
-        return view('frontend.productpromo');
-    })->name('promo');;
-
-    Route::get('ordersuccess', function () {
-        return view('frontend.ordersuccess');
-    })->name('ordersuccess');
-
-    Route::resource('my-profile','ProfileController');
-
     Route::get('security-check', function () {
         return view('frontend.security-check');
     })->name("security-check");
+
+    Route::group(['middleware' => ['auth', 'verified']], function () {
+        Route::get('/cart', 'cartController@index')->name('shoppingcart');
+        Route::post('/add-to-cart', 'cartController@store');
+        Route::get('/submit_order','cartController@submitOrder')->name('orders.submit');
+        Route::post('/upload-logo', 'cartController@uploadlogo');
+        Route::delete('/delete-cart-item/{id}', 'cartController@destroy')->name('orders.delete-cart-item');
+        Route::get('ordersuccess', function () {
+            return view('frontend.ordersuccess');
+        })->name('ordersuccess');
+
+        Route::resource('my-profile','ProfileController');
+
+    });
+    // Route::get('brand-new', function () {
+    //     return view('frontend.productpromo');
+    // })->name('promo');;
 
     
 });
@@ -63,7 +64,7 @@ Route::group(['namespace' => 'Frontend'], function () {
 Route::redirect('/home', '/admin');
 
 // Auth::routes(['register' => false]);
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', 'isAdmin']], function () {
     Route::get('/', 'HomeController@index')->name('home');

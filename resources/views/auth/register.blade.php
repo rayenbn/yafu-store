@@ -16,8 +16,9 @@
                                 {{ \Session::get('message') }}
                             </div>
                         @endif
-                        <h2>Create a AFStore account</h2>
-                        <p>If you have shopped with us before, please enter your details in the boxes below. If you are a new customer register new account <a href="{{ route('register') }}" style="color: crimson;">here.</a></p>
+            
+                        <h2>Create an AFStore account</h2>
+                        <p>If you have shopped with us before, please enter your details in the boxes below. If you already have an account <a href="{{ route('login') }}" style="color: crimson;">here.</a></p>
                         <form method="POST" action="{{ route('register') }}">
                         @csrf
                       

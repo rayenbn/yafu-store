@@ -41,6 +41,7 @@ class Kernel extends HttpKernel
         'bindings'      => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'auth.basic'    => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'setLocale'     => \App\Http\Middleware\SetLocale::class,
-        'isAdmin'          => \App\Http\Middleware\AdminMiddleware::class,
+        'isAdmin'       => \App\Http\Middleware\AdminMiddleware::class,
+        'verified'      =>  \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
     ];
 }

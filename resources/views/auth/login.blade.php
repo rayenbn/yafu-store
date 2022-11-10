@@ -9,12 +9,13 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         @if(\Session::has('message'))
-                            <div class="alert alert-danger">
-                                <strong>Error!</strong>
-                                {{ \Session::get('message') }}
-                            </div>
+                        <div class="alert alert-danger">
+                            <strong>Error!</strong>
+                            {{ \Session::get('message') }}
+                        </div>
                         @endif
-                        <h2>Log in</h2>
+
+                        <h2>Login</h2>
                         <p>If you have shopped with us before, please enter your details in the boxes below. If you are a new customer register new account <a href="{{ route('register') }}" style="color: crimson;">here.</a></p>
                         <form method="POST" action="{{ route('login') }}">
                             {{ csrf_field() }}

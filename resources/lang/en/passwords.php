@@ -8,6 +8,7 @@ return [
     'user'           => [
         'title'          => 'Users',
         'title_singular' => 'User',
+        'notfound'       => 'Email not found',
         'fields'         => [
             'id'                       => 'ID',
             'id_helper'                => '',
