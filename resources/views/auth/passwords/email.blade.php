@@ -18,7 +18,7 @@
                         @if(\Session::has('status'))
                         <div class="alert alert-success">
                             <strong>Success!</strong>
-                            {{ \Session::get('status') }}
+                            {{ \Session::get('status') }} . (it may arrive in the Junk folder)
                         </div>
                         @endif 
                  

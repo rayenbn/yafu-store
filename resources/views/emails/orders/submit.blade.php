@@ -41,7 +41,7 @@
           
             <b>Rayen Ben</b> <br>
             <br>
-            rayen@yafu-pey-toys.com<br>
+            rayen@yafu-pet-toys.com<br>
 			CN: +86 13226604307
         </td>
     </tr>

@@ -44,7 +44,7 @@ class OrderSubmit extends Mailable
 
         return $this
             ->from(config('mail.from.address'), config('mail.from.name'))
-            ->bcc(['rayen@yafu-pey-toys.com'], 'Wholesale pet toys manufacture order')
+            ->bcc(['rayen@yafu-pet-toys.com'], 'Wholesale pet toys manufacture order')
             ->replyTo($this->data->email, $this->data->name)
             ->subject('YAFU Production Order Confirmation')
             ->with([
