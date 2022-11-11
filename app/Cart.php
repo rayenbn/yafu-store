@@ -33,4 +33,9 @@ class Cart extends Model
     {
         return $value / 100;  
     }
+
+    public function getInvoiceFile()
+    {
+        return storage_path("app/xlsx/invoices_" . str_slug($this->invoice_number, '-') . ".xlsx");
+    }
 }

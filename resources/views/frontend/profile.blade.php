@@ -106,8 +106,11 @@
                                                             <p>Invoice Nb: {{ $order->invoice_number}}</p>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <a href="#" class="btn btn-default ">View</a>
-                                                            <a href="#" class="btn btn-info">Invoice</a>
+                                                            <!-- <a href="#" class="btn btn-default ">View</a> -->
+                                                            <a href="{{ route('invoice.export', $order->invoice_number)}}" class="btn btn-outline-primary btn-sm active">
+                                                                <i class="flaticon flaticon-download-tray"></i>
+                                                                Invoice
+                                                            </a>
                                                         </div>
                                                         </span>
                                                     </div>

@@ -52,6 +52,8 @@ Route::group(['namespace' => 'Frontend'], function () {
         })->name('ordersuccess');
 
         Route::resource('my-profile','ProfileController');
+        Route::get('/export-invoice/{id}', 'ProfileController@exportcsvbyid')->name('invoice.export');
+
 
     });
     // Route::get('brand-new', function () {

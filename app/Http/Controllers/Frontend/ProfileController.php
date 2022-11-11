@@ -33,6 +33,15 @@ class ProfileController extends Controller
         return view('frontend.profile', compact('user', 'orders'));
     }
 
+
+    public function exportcsvbyid($invoiceNumber)
+    {
+      
+        $download_path = storage_path("app/xlsx/invoices_" . str_slug($invoiceNumber, '-') . ".xlsx");
+        return response()->download($download_path);
+
+    }
+
      /**
      * Display a listing of the resource.
      *
