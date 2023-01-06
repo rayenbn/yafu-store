@@ -32,7 +32,7 @@ class HomeController extends Controller
         $categories = Category::orderBy('position', 'asc')->take(6)->get()->toarray();
         $blogs = Blog::orderBy('created_at', 'asc')->take(3)->get();
         $galleries = Gallery::select('picture')->get();
-        $products = Product::where('status', 1)->inRandomOrder()->limit(4)->get();
+        $products = Product::where('status', 1)->inRandomOrder()->limit(8)->get();
        
         return view('frontend.index', compact('home_page','sliders', 'categories','products','blogs','categories','galleries'));
     }

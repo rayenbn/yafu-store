@@ -44,6 +44,10 @@ class Category extends Model
     	return $this->belongsToMany('App\Product','prod_cat')->where('status', 1)->orderBy('created_at','ASC')->paginate(12);
     }
 
+    public function randomProducts()
+    {
+    	return $this->belongsToMany('App\Product','prod_cat')->where('status', 1)->inRandomOrder()->limit(8)->get();;
+    }
 
     // One level child
     public function child() {

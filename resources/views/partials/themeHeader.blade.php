@@ -9,9 +9,9 @@ $cart_items = Controller::cartItems();
 
 ?>
 
-<!--Header-->
+<!--Header --> 
 <header class="page-header @if (request()->routeIs('home')) header-home @endif
-						@if (request()->routeIs('promo')) promo-header @endif">
+						@if (request()->routeIs('cats-landingpage')) promo-header @endif">
 	<div class="container">
 		<div class="top-bar row align-items-center">
 			<div class="search col-lg-4">

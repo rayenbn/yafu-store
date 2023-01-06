@@ -48,7 +48,8 @@
 		<div class="page-wrap @if (request()->routeIs('blogs')) archive blog @endif 
 								@if (request()->routeIs('shop'))archive shop @endif
 								@if (request()->routeIs('shop.detail')) single shop @endif
-								@if (request()->routeIs('shoppingcart')) cart shop @endif ">
+								@if (request()->routeIs('shoppingcart')) cart shop @endif"
+		>
 			@yield('content')
 		</div>
 

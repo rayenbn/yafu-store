@@ -2,8 +2,8 @@
 
 // Route::redirect('/', '/en');
 
-
-
+use App\Category;
+use App\Product;
 
 Route::group(['namespace' => 'Frontend'], function () {
 // Route::group(['prefix' => '{locale}','where' => ['locale' => '[a-zA-Z]{2}'],'namespace' => 'Frontend', 'middleware' => 'setLocale'], function () {
@@ -56,11 +56,23 @@ Route::group(['namespace' => 'Frontend'], function () {
 
 
     });
-    // Route::get('brand-new', function () {
-    //     return view('frontend.productpromo');
-    // })->name('promo');;
 
-    
+    Route::get('cats-pet-toys-manufacturer', function () {
+
+        $category = Category::findOrFail(3);
+        $products = $category->randomProducts();
+        
+        return view('frontend.cats-landing-page', compact('products'));
+    })->name('cats-landingpage');
+
+    Route::get('dogs-pet-toys-manufacturer', function () {
+
+        $category = Category::findOrFail(2);
+        $products = $category->randomProducts();
+        
+        return view('frontend.dogs-landing-page', compact('products'));
+    })->name('dogs-landingpage');
+
 });
 
 Route::redirect('/home', '/admin');

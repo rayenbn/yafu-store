@@ -23,16 +23,16 @@ $global_settings =Controller::global_settings();
 				<span>Follow us:</span>
 				<ul class="social-links ml-md-3">
 					@if (isset($footer->youtube))
-					<li><a href="{{ $footer->youtube }}"><i class="mdi mdi-youtube"></i></a></li>
+					<li><a href="{{ $footer->youtube }}" target="_blank"><i class="mdi mdi-youtube"></i></a></li>
 					@endif
 					@if (isset($footer->fb))
-					<li><a href="{{ $footer->fb }}"><i class="mdi mdi-facebook"></i></a></li>
+					<li><a href="{{ $footer->fb }}" target="_blank"><i class="mdi mdi-facebook"></i></a></li>
 					@endif
 					@if (isset($footer->ig))
-					<li><a href="{{ $footer->ig }}"><i class="mdi mdi-instagram"></i></a></li>
+					<li><a href="{{ $footer->ig }}" target="_blank"><i class="mdi mdi-instagram"></i></a></li>
 					@endif
 					@if (isset($footer->twitter))
-					<li><a href="{{ $footer->twitter }}"><i class="mdi mdi-twitter"></i></a></li>
+					<li><a href="{{ $footer->twitter }}" target="_blank"><i class="mdi mdi-twitter"></i></a></li>
 					@endif
 				</ul>
 			</div>
@@ -59,6 +59,12 @@ $global_settings =Controller::global_settings();
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="{{ route('contactus') }}">Contact</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ route('cats-landingpage') }}">Cat toys manufacturer</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ route('dogs-landingpage') }}">Dogs toys manufacturer</a>
 				</li>
 			</ul>
 		</nav>

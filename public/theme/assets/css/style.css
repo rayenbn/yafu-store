@@ -3628,3 +3628,20 @@ html, body {
     background-color: #d8d8d8;
     padding: 30px;
   }
+
+  .card {
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 0 25px 0 rgb(144 144 147 / 17%);
+    border: none;
+  }
+
+  .card h3 {
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    text-transform: none;
+  }
+
+  .m-100 {
+    margin: 100px 0;
+  }
