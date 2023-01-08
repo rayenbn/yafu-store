@@ -54,9 +54,16 @@ class InquiriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, $type)
     {
-        //
+        if ($type == "company_inquiries"){
+            $inquiry = CompanyInquiry::where('id', '=' , $id)->first();
+        }else if ($type == "private_inquiries"){
+            $inquiry = PrivateInquiry::where('id', '=' , $id)->first();
+        }
+        
+        
+        return view('admin.inquiries.show', compact('inquiry'));
     }
 
     /**

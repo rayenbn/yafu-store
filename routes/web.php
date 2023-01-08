@@ -139,7 +139,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     Route::resource('gallery-page', 'GalleryPageController');
 
-    Route::resource('inquiries', 'InquiriesController');
+    Route::get('inquiries/{user}/{type}', 'InquiriesController@show')->name('inquiries.show');
+    Route::resource('inquiries', 'InquiriesController')->except(['show']);
 
 });
 

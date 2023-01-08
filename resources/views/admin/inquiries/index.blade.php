@@ -3,7 +3,7 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.product.title_singular') }} {{ trans('global.list') }}
+        Inquiries {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
@@ -22,6 +22,9 @@
                         </th>
                         <th>
                             Type
+                        </th>
+                        <th>
+                            Submited date
                         </th>
                         <th>
                             &nbsp;
@@ -46,8 +49,11 @@
                                 </span>
                             </td>
                             <td>
+                                {{ $inquiry->created_at->diffForHumans() }}
+                            </td>
+                            <td>
                                 @can('inquiries_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.inquiries.show', $inquiry->id) }}">
+                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.inquiries.show', [$inquiry->id, $inquiry->getTable()]) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan
