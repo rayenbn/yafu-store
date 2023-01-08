@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class ContactMail extends Mailable
+class PrivateContactMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -29,6 +29,6 @@ class ContactMail extends Mailable
      */
     public function build()
     {
-        return $this->from($this->data['email'])->subject('Enquiry for contact')->markdown('emails.contact')->with('data', $this->data);
+        return $this->from($this->data['email'])->subject('Private Enquiry from Yafu pet toys store')->markdown('emails.private_contact')->with('data', $this->data);
     }
 }

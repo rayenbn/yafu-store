@@ -6,7 +6,8 @@ use App\CompanyInquiry;
 use App\Contactus;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Mail\ContactMail;
+use App\Mail\PrivateContactMail;
+use App\Mail\CompanyContactMail;
 use App\PrivateInquiry;
 use Illuminate\Support\Facades\Mail;
 
@@ -46,7 +47,7 @@ class ContactusController extends Controller
 
         CompanyInquiry::create($data);
 
-        Mail::to('rayenbn26@gmail.com')->send(new ContactMail($data));
+        Mail::to('rayen@yafu-pet-toys.com')->send(new CompanyContactMail($data));
         return back()->with('success', 'Thanks for contacting us!');
 
     }
@@ -71,7 +72,7 @@ class ContactusController extends Controller
             );
 
             PrivateInquiry::create($data);
-            Mail::to('rayenbn26@gmail.com')->send(new ContactMail($data));
+            Mail::to('rayen@yafu-pet-toys.com')->send(new PrivateContactMail($data));
             return back()->with('success', 'Thanks for contacting us!');
 
     }

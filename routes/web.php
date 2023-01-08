@@ -139,6 +139,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     Route::resource('gallery-page', 'GalleryPageController');
 
+    Route::resource('inquiries', 'InquiriesController');
+
 });
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {

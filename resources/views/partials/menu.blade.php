@@ -303,6 +303,20 @@
                     </ul>
                 </li>
                 @endcan
+
+                @can('inquiries_access')
+                <li class="nav-item">
+                    <a href="{{ route('admin.inquiries.index') }}" class="nav-link">
+                        <p>
+                            <i class="fas fa-book">
+
+                            </i>
+                            <span>Inquiries</span>
+                        </p>
+                    </a>
+                </li>
+                @endcan
+
                 <li class="nav-item">
                     <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
                         <p>
